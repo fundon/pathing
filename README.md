@@ -64,7 +64,7 @@ tokens:
 * `url` String - A url path.
 * `options` Object - Custom delimiters etc, Optional.
   * `open` String - Open tag, Defaults to `{`.
-  * `close` String - Close tag, Defaults to `}'.
+  * `close` String - Close tag, Defaults to `}`.
 
 
 ## License
