@@ -24,11 +24,11 @@ var tokens = pathing('{year}-{month}-{day}');
 /*
 tokens:
   [
-    { name: 'PLACEHOLDER', value: 'year', pos: 1, regexp: '[^/]+' },
-    { name: 'DASH', value: '-', pos: 7 },
-    { name: 'PLACEHOLDER', value: 'month', pos: 8, regexp: '[^/]+' },
-    { name: 'DASH', value: '-', pos: 15 },
-    { name: 'PLACEHOLDER', value: 'day', pos: 16, regexp: '[^/]+' }
+    { name: 'PLACEHOLDER', value: 'year', pos: 0, regexp: '[^/]+' },
+    { name: 'DASH', value: '-', pos: 6 },
+    { name: 'PLACEHOLDER', value: 'month', pos: 7, regexp: '[^/]+' },
+    { name: 'DASH', value: '-', pos: 14 },
+    { name: 'PLACEHOLDER', value: 'day', pos: 15, regexp: '[^/]+' }
   ]
 */
 ```
