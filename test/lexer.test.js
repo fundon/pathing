@@ -1,3 +1,4 @@
+'use strict';
 
 var pathing = require('../')
 var Lexer = pathing.Lexer;
