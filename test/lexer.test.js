@@ -23,13 +23,15 @@ describe('Lexer', function () {
     toks[1].name.should.eql('PLACEHOLDER');
   });
 
-  it('should pase muitl named parameters, "/{controller}/{action}"', function () {
-    var lex = new Lexer('/{controller}/{action}');
+  it('should pase muitl named parameters, "/{controller}/{action}/{id:\\d+}"', function () {
+    var lex = new Lexer('/{controller}/{action}/{id:\\d+}');
     var toks = lex.tokens();
     toks[1].name.should.eql('PLACEHOLDER');
     toks[1].value.should.eql('controller');
     toks[3].name.should.eql('PLACEHOLDER');
     toks[3].value.should.eql('action');
+    toks[5].name.should.eql('PLACEHOLDER');
+    toks[5].value.should.eql('id');
   });
 
   it('should pase custom named parameter, "/{test:\\d+}"', function () {
