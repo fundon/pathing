@@ -1,6 +1,6 @@
 # pathing [![Build Status](https://travis-ci.org/fundon/pathing.svg)](https://travis-ci.org/fundon/pathing)
 
-A URL path lexer. [R3](https://github.com/c9s/r3) inspired.
+A fast path lexer. [R3](https://github.com/c9s/r3) inspired.
 
 
 ## Usage
@@ -66,15 +66,15 @@ $ make benchmark
 
 ## API
 
-### pathing(url, [options])
+### pathing(path, [options])
 
-* `url` String - A url path.
+* `path` String - A path.
 * `options` Object - Custom delimiters etc, Optional.
   * `open` String - Open tag, Defaults to `{`.
   * `close` String - Close tag, Defaults to `}`.
 
 
-### Lexer(url)
+### Lexer(path)
 
 * open - Open tag.
 * close - Close tag.
