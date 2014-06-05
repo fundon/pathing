@@ -67,6 +67,14 @@ tokens:
   * `close` String - Close tag, Defaults to `}`.
 
 
+### Lexer(url)
+
+* open - Open tag.
+* close - Close tag.
+* token() - Reture next token.
+* tokens() - Reture all tokens.
+
+
 ## License
 
 MIT
