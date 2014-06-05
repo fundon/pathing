@@ -1,6 +1,6 @@
 # pathing [![Build Status](https://travis-ci.org/fundon/pathing.svg)](https://travis-ci.org/fundon/pathing)
 
-URL path parser.
+A URL path lexer.
 
 
 ## Usage
@@ -62,4 +62,11 @@ tokens:
 ### pathing(url, [options])
 
 * `url` String - A url path.
-* `options` Object - , Optional.
+* `options` Object - Custom delimiters etc, Optional.
+  * `open` String - Open tag, Defaults to `{`.
+  * `close` String - Close tag, Defaults to `}'.
+
+
+## License
+
+MIT

@@ -1,8 +1,14 @@
 {
   "name": "pathing",
   "version": "0.0.0",
-  "description": "url path parser",
+  "description": "A URL path lexer",
   "main": "index.js",
+  "keywords": [
+    "express",
+    "koa"
+    "url",
+    "lexer"
+  ],
   "scripts": {
     "test": "make test"
   },
