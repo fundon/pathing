@@ -41,4 +41,23 @@ describe('Lexer', function () {
     toks[1].regexp.should.eql('\\d+');
   });
 
+  it('should pase custom regexp parameter and without named, "/{:\\d+}"', function () {
+    var lex = new Lexer('/{:\\d+}');
+    var toks = lex.tokens();
+    toks[1].name.should.eql('PLACEHOLDER');
+    toks[1].value.should.eql('');
+    toks[1].regexp.should.eql('\\d+');
+  });
+
+  it('should split by dash, "{year}-{month}-{day}"', function () {
+    var lex = new Lexer('{year}-{month}-{day}');
+    var toks = lex.tokens();
+    toks[0].name.should.eql('PLACEHOLDER');
+    toks[0].value.should.eql('year');
+    toks[2].name.should.eql('PLACEHOLDER');
+    toks[2].value.should.eql('month');
+    toks[4].name.should.eql('PLACEHOLDER');
+    toks[4].value.should.eql('day');
+  });
+
 });
