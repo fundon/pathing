@@ -49,6 +49,13 @@ tokens:
 ```
 
 
+## Benchmark
+
+```
+$ make benchmark
+```
+
+
 ## Pattern Syntax
 
 ```
