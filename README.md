@@ -1,6 +1,6 @@
 # pathing [![Build Status](https://travis-ci.org/fundon/pathing.svg)](https://travis-ci.org/fundon/pathing)
 
-A URL path lexer.
+A URL path lexer. [R3](https://github.com/c9s/r3) inspired.
 
 
 ## Usage
