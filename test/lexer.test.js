@@ -60,4 +60,14 @@ describe('Lexer', function () {
     toks[4].value.should.eql('day');
   });
 
+
+  it('should parse Custom delimiters, "/posts/<id>"', function () {
+    var lex = new Lexer('/posts/<id>');
+    lex.open = '<';
+    lex.close = '>';
+    var toks = lex.tokens();
+    toks[3].name.should.eql('PLACEHOLDER');
+    toks[3].value.should.eql('id');
+  });
+
 });

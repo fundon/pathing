@@ -33,6 +33,21 @@ tokens:
 */
 ```
 
+### Custom delimiters
+
+```js
+var tokens = pathing('/posts/<id>', { open: '<', close: '>' });
+/*
+tokens:
+  [
+    { name: 'DIVIDE', value: '/', pos: 0 },
+    { name: 'IDENTIFIER', value: 'posts', pos: 1 },
+    { name: 'DIVIDE', value: '/', pos: 6 },
+    { name: 'PLACEHOLDER', value: 'id', pos: 7, regexp: '[^/]+' }
+  ]
+*/
+```
+
 
 ## Pattern Syntax
 
@@ -42,4 +57,9 @@ tokens:
 ```
 
 
-### API
+## API
+
+### pathing(url, [options])
+
+* `url` String - A url path.
+* `options` Object - , Optional.
