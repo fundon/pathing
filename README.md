@@ -71,8 +71,8 @@ tokens:
 
 * open - Open tag.
 * close - Close tag.
-* token() - Reture next token.
-* tokens() - Reture all tokens.
+* token() - Return next token.
+* tokens() - Return all tokens.
 
 
 ## License
