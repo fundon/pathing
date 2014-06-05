@@ -61,7 +61,7 @@ describe('Lexer', function () {
   });
 
 
-  it('should parse Custom delimiters, "/posts/<id>"', function () {
+  it('should parse custom delimiters, "/posts/<id>"', function () {
     var lex = new Lexer('/posts/<id>');
     lex.open = '<';
     lex.close = '>';
