@@ -2,6 +2,9 @@ TESTS = test/*.test.js
 REPORTER = spec
 MOCHA_OPTS =
 
+benchmark:
+	@node benchmark/path.js
+
 test:
 	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
 		--reporter $(REPORTER) \
@@ -9,4 +12,4 @@ test:
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
-.PHONY: test
+.PHONY: test benchmark

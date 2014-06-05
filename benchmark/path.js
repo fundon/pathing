@@ -11,8 +11,22 @@ suite.add('path-to-regexp', function() {
   res0 = [];
   pathToRegexp('/foo/:bar', res0);
 })
+.add('path-to-regexp#mutil-parameters', function() {
+  res0 = [];
+  pathToRegexp(':year(\\d+)-:month(\\d+)-:day(\\d+)', res0);
+})
+.add('path-to-regexp#longest', function() {
+  res0 = [];
+  pathToRegexp('/:controller/:action/posts/:id/:year-:month-:day/:title/:author.:format', res0);
+})
 .add('pathing', function() {
   res1 = pathing('/foo/{bar}');
+})
+.add('pathing#mutil-parameters', function() {
+  res1 = pathing('{year:\\d+}-{month:\\d+}-{day:\\d+}');
+})
+.add('pathing#longest', function() {
+  res1 = pathing('/{controller}/{action}/posts/{id}/{year:\\d+}-{month:\\d+}-{day:\\d+}/{title}/{author}.{format}');
 })
 // add listeners
 .on('cycle', function(event) {
