@@ -6,10 +6,17 @@ benchmark:
 	@node benchmark/path.js
 
 test:
-	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
+	@NODE_ENV=test node_modules/mocha/bin/mocha \
 		--reporter $(REPORTER) \
 		--require should \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
-.PHONY: test benchmark
+cov:
+	@istanbul cover node_modules/mocha/bin/_mocha -- \
+		--reporter $(REPORTER) \
+		--require should \
+		$(MOCHA_OPTS) \
+		$(TESTS)
+
+.PHONY: benchmark test cov
