@@ -1,7 +1,7 @@
 {
   "name": "pathing",
-  "version": "0.0.1",
-  "description": "A path lexer",
+  "version": "0.0.2",
+  "description": "A fast path lexer",
   "main": "index.js",
   "keywords": [
     "express",
