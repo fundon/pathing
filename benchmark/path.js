@@ -19,6 +19,10 @@ suite.add('path-to-regexp', function() {
   res0 = [];
   pathToRegexp('/:controller/:action/posts/:id/:year-:month-:day/:title/:author.:format', res0);
 })
+.add('path-to-regexp#longest...', function() {
+  res0 = [];
+  pathToRegexp('/:controller/:action/posts/:id/:year-:month-:day/:title/:author.:format/:controller/:action/posts/:id/:year-:month-:day/:title/:author.:format', res0);
+})
 .add('pathing', function() {
   res1 = pathing('/foo/{bar}');
 })
@@ -27,6 +31,9 @@ suite.add('path-to-regexp', function() {
 })
 .add('pathing#longest', function() {
   res1 = pathing('/{controller}/{action}/posts/{id}/{year:\\d+}-{month:\\d+}-{day:\\d+}/{title}/{author}.{format}');
+})
+.add('pathing#longest...', function() {
+  res1 = pathing('/{controller}/{action}/posts/{id}/{year:\\d+}-{month:\\d+}-{day:\\d+}/{title}/{author}.{format}/{controller}/{action}/posts/{id}/{year:\\d+}-{month:\\d+}-{day:\\d+}/{title}/{author}.{format}');
 })
 // add listeners
 .on('cycle', function(event) {
