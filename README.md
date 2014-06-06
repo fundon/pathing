@@ -11,11 +11,11 @@ var tokens = pathing('/{controller}/{action}/{id:\\d+}');
 /*
 tokens:
   [
-    { name: 'DIVIDE', value: '/', pos: 0 },
+    { name: 'SLASH', value: '/', pos: 0 },
     { name: 'PLACEHOLDER', value: 'controller', pos: 1, regexp: '[^/]+' },
-    { name: 'DIVIDE', value: '/', pos: 13 },
+    { name: 'SLASH', value: '/', pos: 13 },
     { name: 'PLACEHOLDER', value: 'action', pos: 14, regexp: '[^/]+' }
-    { name: 'DIVIDE', value: '/', pos: 22 },
+    { name: 'SLASH', value: '/', pos: 22 },
     { name: 'PLACEHOLDER', value: 'id', pos: 23, regexp: '\\d+' } ]
   ]
 */
@@ -25,9 +25,9 @@ var tokens = pathing('{year}-{month}-{day}');
 tokens:
   [
     { name: 'PLACEHOLDER', value: 'year', pos: 0, regexp: '[^/]+' },
-    { name: 'DASH', value: '-', pos: 6 },
+    { name: 'IDENTIFIER', value: '-', pos: 6 },
     { name: 'PLACEHOLDER', value: 'month', pos: 7, regexp: '[^/]+' },
-    { name: 'DASH', value: '-', pos: 14 },
+    { name: 'IDENTIFIER', value: '-', pos: 14 },
     { name: 'PLACEHOLDER', value: 'day', pos: 15, regexp: '[^/]+' }
   ]
 */
@@ -40,9 +40,9 @@ var tokens = pathing('/posts/<id>', { open: '<', close: '>' });
 /*
 tokens:
   [
-    { name: 'DIVIDE', value: '/', pos: 0 },
+    { name: 'SLASH', value: '/', pos: 0 },
     { name: 'IDENTIFIER', value: 'posts', pos: 1 },
-    { name: 'DIVIDE', value: '/', pos: 6 },
+    { name: 'SLASH', value: '/', pos: 6 },
     { name: 'PLACEHOLDER', value: 'id', pos: 7, regexp: '[^/]+' }
   ]
 */
