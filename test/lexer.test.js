@@ -74,8 +74,13 @@ describe('Lexer', function () {
   it('should parse special characters, ".=&;?#"', function () {
     var lex = new Lexer('.=&;?#');
     var toks = lex.tokens();
+    toks.length.should.eql(3);
     toks[0].name.should.eql('IDENTIFIER');
-    toks[0].value.should.eql('.=&;?#');
+    toks[0].value.should.eql('.=&;');
+    toks[1].name.should.eql('QUESTION');
+    toks[1].value.should.eql('?');
+    toks[2].name.should.eql('HASH');
+    toks[2].value.should.eql('#');
   });
 
 });
