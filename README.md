@@ -3,6 +3,21 @@
 A fast path lexer. [R3](https://github.com/c9s/r3) inspired.
 
 
+## Pattern Syntax
+
+```
+/posts/{id}       use [^/]+ regular expression by default.
+/posts/{id:\\d+}  use `\d+` regular expression instead of default.
+```
+
+
+## Benchmark
+
+```
+$ make benchmark
+```
+
+
 ## Usage
 
 ```js
@@ -46,21 +61,6 @@ tokens:
     { name: 'PLACEHOLDER', value: 'id', pos: 7, regexp: '[^/]+' }
   ]
 */
-```
-
-
-## Benchmark
-
-```
-$ make benchmark
-```
-
-
-## Pattern Syntax
-
-```
-/posts/{id}       use [^/]+ regular expression by default.
-/posts/{id:\\d+}  use `\d+` regular expression instead of default.
 ```
 
 
