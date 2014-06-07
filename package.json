@@ -1,6 +1,6 @@
 {
   "name": "pathing",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A fast path lexer",
   "main": "index.js",
   "keywords": [
