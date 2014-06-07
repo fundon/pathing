@@ -6,8 +6,9 @@ A fast path lexer. [R3](https://github.com/c9s/r3) inspired.
 ## Pattern Syntax
 
 ```
-/posts/{id}       use [^/]+ regular expression by default.
-/posts/{id:\\d+}  use `\d+` regular expression instead of default.
+/posts/{id}           use [^/]+ regular expression by default.
+/posts/{id:\\d+}      use `\d+` regular expression instead of default.
+/posts/{id:\\d{4,8}}  use `\d{4,8}` regular expression instead of default.
 ```
 
 

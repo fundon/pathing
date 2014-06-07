@@ -83,4 +83,56 @@ describe('Lexer', function () {
     toks[2].value.should.eql('#');
   });
 
+  it('should parse nested delimiters, "/posts/{id:\\d{4,8}}"', function () {
+    var lex = new Lexer('/posts/{id:\\d{4,8}}');
+    var toks = lex.tokens();
+    toks.length.should.eql(4);
+    toks[3].name.should.eql('PLACEHOLDER');
+    toks[3].regexp.should.eql('\\d{4,8}');
+  });
+
+  it('should be empty value, "/posts/{:\\d+}"', function () {
+    var lex = new Lexer('/posts/{:\\d+}');
+    var toks = lex.tokens();
+    toks[3].value.should.eql('');
+  });
+
+  it('should be used `[^/]+` regular expression, "/posts/{id:}"', function () {
+    var lex = new Lexer('/posts/{id:}');
+    var toks = lex.tokens();
+    toks[3].regexp.should.eql('[^/]+');
+  });
+
+  it('should be empty value, "/posts/{:}"', function () {
+    var lex = new Lexer('/posts/{:}');
+    var toks = lex.tokens();
+    toks[3].value.should.eql('');
+    toks[3].regexp.should.eql('[^/]+');
+  });
+
+  it('should be empty value and used `[^/]+` regular expression, "/posts/{}"', function () {
+    var lex = new Lexer('/posts/{:}');
+    var toks = lex.tokens();
+    toks[3].value.should.eql('');
+    toks[3].regexp.should.eql('[^/]+');
+  });
+
+  it('should return null with broken delimiters, "/posts/{"', function () {
+    var lex = new Lexer('/posts/{');
+    var toks = lex.tokens();
+		toks.length.should.eql(3);
+  });
+
+  it('should return null with broken delimiters, "/posts/}"', function () {
+    var lex = new Lexer('/posts/}');
+    var toks = lex.tokens();
+		toks.length.should.eql(3);
+  });
+
+  it('should return null with broken delimiters, "/posts/{/}/"', function () {
+    var lex = new Lexer('/posts/}');
+    var toks = lex.tokens();
+		toks.length.should.eql(3);
+  });
+
 });
