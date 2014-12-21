@@ -15,7 +15,7 @@ A fast path lexer. [R3](https://github.com/c9s/r3) inspired.
 ## Benchmark, x3+
 
 ```
-$ make benchmark
+$ make bench
 ```
 
 

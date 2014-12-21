@@ -120,19 +120,19 @@ describe('Lexer', function () {
   it('should return null with broken delimiters, "/posts/{"', function () {
     var lex = new Lexer('/posts/{');
     var toks = lex.tokens();
-		toks.length.should.eql(3);
+    toks.length.should.eql(3);
   });
 
   it('should return null with broken delimiters, "/posts/}"', function () {
     var lex = new Lexer('/posts/}');
     var toks = lex.tokens();
-		toks.length.should.eql(3);
+    toks.length.should.eql(3);
   });
 
   it('should return null with broken delimiters, "/posts/{/}/"', function () {
     var lex = new Lexer('/posts/}');
     var toks = lex.tokens();
-		toks.length.should.eql(3);
+    toks.length.should.eql(3);
   });
 
 });

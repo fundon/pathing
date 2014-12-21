@@ -1,6 +1,6 @@
 {
   "name": "pathing",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A fast path lexer",
   "main": "index.js",
   "keywords": [
@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/fundon/pathing",
   "devDependencies": {
-    "benchmark": "^1.0.0",
-    "istanbul": "^0.2.10",
-    "mocha": "^1.20.1",
-    "path-to-regexp": "^0.1.2",
-    "should": "^4.0.1"
+    "benchmark": "*",
+    "istanbul": "*",
+    "mocha": "*",
+    "path-to-regexp": "*",
+    "should": "*"
   }
 }
